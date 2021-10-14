@@ -10,3 +10,9 @@ test('creates manager object', () => {
     expect(manager.email).toBe('dave@gmail.com');
     expect(manager.officeNumber).toEqual(1);
 });
+
+test("gets manager's role", () => {
+    const manager = new Manager('Dave', 456, 'dave@gmail.com', 1);
+
+    expect(manager.getRole()).toBe('Manager');
+});
