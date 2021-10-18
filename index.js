@@ -48,17 +48,13 @@ const promptManager = () => {
                     promptIntern(employeeData);
                     break;
                 case 'Finish team':
-                    console.log(generatePage(employeeData));
+                    generatePage(employeeData);
                     console.log("Your team profile has been generated! Find it in /dist.");
             }
         })
 };
 
 // const promptEmployee = employeeData => {
-//     if(!employeeData.employees) {
-//         employeeData.employees = [];
-//     }
-
 //     return inquirer
 //         .prompt([
 //             {
@@ -71,13 +67,13 @@ const promptManager = () => {
 //         .then(({ confirmAdd }) => {
 //             switch (confirmAdd) {
 //                 case 'Add Engineer':
-//                     promptEngineer();
+//                     promptEngineer(employeeData);
 //                     break;
 //                 case 'Add Intern':
-//                     promptIntern();
+//                     promptIntern(employeeData);
 //                     break;
 //                 case 'Finish team':
-//                     console.log(generatePage(templateData));
+//                     generatePage(employeeData);
 //                     console.log("Your team profile has been generated! Find it in /dist.");
 //             }
 //         })
@@ -128,7 +124,6 @@ const promptEngineer = employeeData => {
                     promptIntern(employeeData);
                     break;
                 case 'Finish team':
-                    console.log(employeeData);
                     console.log(generatePage(employeeData));
                     console.log("Your team profile has been generated! Find it in /dist.");
             }
@@ -180,11 +175,22 @@ const promptIntern = employeeData => {
                     promptIntern(employeeData);
                     break;
                 case 'Finish team':
-                    console.log(employeeData);
-                    console.log(generatePage(employeeData));
+                    generatePage(employeeData);
                     console.log("Your team profile has been generated! Find it in /dist.");
             }
         })
 };
 
-promptManager();
+promptManager()
+    // .then()
+    // .then(pageHTML => writeFile(pageHTML))
+    // .then(writeFileResponse => {
+    //     console.log(writeFileResponse);
+    //     return copyFile();
+    // })
+    // .then(copyFileResponse => {
+    //     console.log(copyFileResponse);
+    // })
+    // .catch(err => {
+    //     console.log(err);
+    // });

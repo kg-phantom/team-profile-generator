@@ -29,20 +29,28 @@ const generateEngineer = engineerData => {
         return ``;
     }
 
+    let engineers = engineerData.map(engineer => {
+        return new Engineer(engineer.name, engineer.id, engineer.email, engineer.github);
+    });
+
     return `
     <div class="pure-u-1-1 pure-u-sm-1-2 pure-u-md-1-3 employee">
+        ${engineers.map(engineer => {
+            return `
             <div class="card-header">
-                <h2>${engineerData.getName()}</h2>
+                <h2>${engineer.getName()}</h2>
                 <h3><i class="fas fa-glasses"></i> Engineer</h3>
             </div>
             <div class="card-body">
                 <div class="info">
-                    <p id="id">ID: ${engineerData.getId()}</p>
-                    <p>Email: <a href="mailto:${engineerData.getEmail()}">${engineerData.getEmail()}</a></p>
-                    <p>GitHub: <a href="https://github.com/${engineerData.getGithub()}">${engineerData.getGithub()}</a></p>
+                    <p id="id">ID: ${engineer.getId()}</p>
+                    <p>Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></p>
+                    <p>GitHub: <a href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></p>
                 </div>
             </div>
-        </div>
+            `;
+        })}
+    </div>
     `;
 };
 
@@ -51,20 +59,28 @@ const generateIntern = internData => {
         return ``;
     }
 
+    let interns = internData.map(intern => {
+        return new Intern(intern.name, intern.id, intern.email, intern.github);
+    });
+
     return `
     <div class="pure-u-1-1 pure-u-sm-1-2 pure-u-md-1-3 employee">
+        ${interns.map(intern => {
+            return `
             <div class="card-header">
-                <h2>${internData.getName()}</h2>
+                <h2>${intern.getName()}</h2>
                 <h3><i class="fas fa-user-graduate"></i> Intern</h3>
             </div>
             <div class="card-body">
                 <div class="info">
-                    <p id="id">ID: ${internData.getId()}</p>
-                    <p>Email: <a href="${internData.getEmail()}">${internData.getEmail()}</a></p>
-                    <p>School: ${internData.getSchool()}</p>
+                    <p id="id">ID: ${intern.getId()}</p>
+                    <p>Email: <a href="${intern.getEmail()}">${intern.getEmail()}</a></p>
+                    <p>School: ${intern.getSchool()}</p>
                 </div>
             </div>
-        </div>
+            `;
+        })}
+    </div>
     `;
 }
 
@@ -93,8 +109,8 @@ const generatePage = ({ manager, engineers, interns }) => {
 
     <section class="pure-g">
         ${generateManager(currentManager)}
-        ${generateEngineer(engineer)}
-        ${generateIntern(intern)}
+        ${generateEngineer(engineers)}
+        ${generateIntern(interns)}
     </section>
     
 </body>
