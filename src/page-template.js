@@ -8,7 +8,7 @@ const generateManager = managerData => {
     }
 
     return `
-    <div class="pure-u-1-1 pure-u-sm-1-2 pure-u-md-1-3 employee">
+    <div class="pure-u-1-1 pure-u-sm-1-3 pure-u-md-1-4 employee">
             <div class="card-header">
                 <h2>${managerData.getName()}</h2>
                 <h3><i class="fas fa-mug-hot"></i> Manager</h3>
@@ -16,7 +16,7 @@ const generateManager = managerData => {
             <div class="card-body">
                 <div class="info">
                     <p id="id">ID: ${managerData.getId()}</p>
-                    <p>Email: <a href="${managerData.getEmail()}">${managerData.getEmail()}</a></p>
+                    <p>Email: <a href="mailto:${managerData.getEmail()}">${managerData.getEmail()}</a></p>
                     <p>Office Number: ${managerData.officeNumber}</p>
                 </div>
             </div>
@@ -34,23 +34,24 @@ const generateEngineer = engineerData => {
     });
 
     return `
-    <div class="pure-u-1-1 pure-u-sm-1-2 pure-u-md-1-3 employee">
         ${engineers.map(engineer => {
             return `
-            <div class="card-header">
-                <h2>${engineer.getName()}</h2>
-                <h3><i class="fas fa-glasses"></i> Engineer</h3>
-            </div>
-            <div class="card-body">
-                <div class="info">
-                    <p id="id">ID: ${engineer.getId()}</p>
-                    <p>Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></p>
-                    <p>GitHub: <a href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></p>
+            <div class="pure-u-1-1 pure-u-sm-1-3 pure-u-md-1-4 employee">
+                <div class="card-header">
+                    <h2>${engineer.getName()}</h2>
+                    <h3><i class="fas fa-glasses"></i> Engineer</h3>
+                </div>
+                <div class="card-body">
+                    <div class="info">
+                        <p id="id">ID: ${engineer.getId()}</p>
+                        <p>Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></p>
+                        <p>GitHub: <a href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></p>
+                    </div>
                 </div>
             </div>
             `;
-        })}
-    </div>
+        })
+        .join('')}
     `;
 };
 
@@ -60,27 +61,28 @@ const generateIntern = internData => {
     }
 
     let interns = internData.map(intern => {
-        return new Intern(intern.name, intern.id, intern.email, intern.github);
+        return new Intern(intern.name, intern.id, intern.email, intern.school);
     });
 
     return `
-    <div class="pure-u-1-1 pure-u-sm-1-2 pure-u-md-1-3 employee">
         ${interns.map(intern => {
             return `
-            <div class="card-header">
-                <h2>${intern.getName()}</h2>
-                <h3><i class="fas fa-user-graduate"></i> Intern</h3>
-            </div>
-            <div class="card-body">
-                <div class="info">
-                    <p id="id">ID: ${intern.getId()}</p>
-                    <p>Email: <a href="${intern.getEmail()}">${intern.getEmail()}</a></p>
-                    <p>School: ${intern.getSchool()}</p>
+                <div class="pure-u-1-1 pure-u-sm-1-3 pure-u-md-1-4 employee">
+                    <div class="card-header">
+                        <h2>${intern.getName()}</h2>
+                        <h3><i class="fas fa-user-graduate"></i> Intern</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="info">
+                            <p id="id">ID: ${intern.getId()}</p>
+                            <p>Email: <a href="${intern.getEmail()}">${intern.getEmail()}</a></p>
+                            <p>School: ${intern.getSchool()}</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
             `;
-        })}
-    </div>
+        })
+        .join('')}
     `;
 }
 
@@ -98,7 +100,7 @@ const generatePage = ({ manager, engineers, interns }) => {
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css" />
     <script src="https://kit.fontawesome.com/6c2a299ddf.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../src/style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <title>My Team</title>
 </head>
 

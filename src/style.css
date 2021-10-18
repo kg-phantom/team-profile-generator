@@ -8,6 +8,7 @@ h1 {
 
 section {
     width: 70%;
+    justify-content: center;
     margin: 35px auto;
 }
 
