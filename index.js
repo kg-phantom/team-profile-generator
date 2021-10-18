@@ -9,11 +9,11 @@ const promptManager = () => {
                 type: 'input',
                 name: 'name',
                 message: "What is the team manager's name?",
-                validate: nameInput => {
-                    if(nameInput) {
+                validate: input => {
+                    if(input) {
                         return true;
                     } else {
-                        console.log('Please enter a name!');
+                        console.log('\nPlease enter a name!');
                         return false;
                     }
                 }
@@ -22,11 +22,12 @@ const promptManager = () => {
                 type: 'input',
                 name: 'id',
                 message: "What is the manager's ID?",
-                validate: nameInput => {
-                    if(nameInput) {
+                validate: input => {
+                    var regex=/^[0-9]+$/;
+                    if(input.match(regex)) {
                         return true;
                     } else {
-                        console.log('Please enter an ID!');
+                        console.log('\nPlease enter an ID number!');
                         return false;
                     }
                 }
@@ -35,11 +36,12 @@ const promptManager = () => {
                 type: 'input',
                 name: 'email',
                 message: "What is the manager's email?",
-                validate: nameInput => {
-                    if(nameInput) {
+                validate: input => {
+                    const validEmail = /\S+@\S+\.\S+/;
+                    if(validEmail.test(input)) {
                         return true;
                     } else {
-                        console.log('Please enter an email!');
+                        console.log('\nPlease enter an email!');
                         return false;
                     }
                 }
@@ -48,11 +50,12 @@ const promptManager = () => {
                 type: 'input',
                 name: 'officeNumber',
                 message: "What is the manager's office number?",
-                validate: nameInput => {
-                    if(nameInput) {
+                validate: input => {
+                    var regex=/^[0-9]+$/;
+                    if(input.match(regex)) {
                         return true;
                     } else {
-                        console.log('Please enter the office number!');
+                        console.log('\nPlease enter an office number!');
                         return false;
                     }
                 }
@@ -100,11 +103,11 @@ const promptEngineer = employeeData => {
                 type: 'input',
                 name: 'name',
                 message: "What is the engineer's name?",
-                validate: nameInput => {
-                    if(nameInput) {
+                validate: input => {
+                    if(input) {
                         return true;
                     } else {
-                        console.log('Please enter a name!');
+                        console.log('\nPlease enter a name!');
                         return false;
                     }
                 }
@@ -113,11 +116,12 @@ const promptEngineer = employeeData => {
                 type: 'input',
                 name: 'id',
                 message: "What is the engineer's ID?",
-                validate: nameInput => {
-                    if(nameInput) {
+                validate: input => {
+                    var regex=/^[0-9]+$/;
+                    if(input.match(regex)) {
                         return true;
                     } else {
-                        console.log('Please enter an ID!');
+                        console.log('\nPlease enter an ID number!');
                         return false;
                     }
                 }
@@ -126,11 +130,12 @@ const promptEngineer = employeeData => {
                 type: 'input',
                 name: 'email',
                 message: "What is the engineer's email?",
-                validate: nameInput => {
-                    if(nameInput) {
+                validate: input => {
+                    const validEmail = /\S+@\S+\.\S+/;
+                    if(validEmail.test(input)) {
                         return true;
                     } else {
-                        console.log('Please enter an email!');
+                        console.log('\nPlease enter an email!');
                         return false;
                     }
                 }
@@ -139,11 +144,11 @@ const promptEngineer = employeeData => {
                 type: 'input',
                 name: 'github',
                 message: "What is the engineer's GitHub username?",
-                validate: nameInput => {
-                    if(nameInput) {
+                validate: input => {
+                    if(input) {
                         return true;
                     } else {
-                        console.log('Please enter a username!');
+                        console.log('\nPlease enter a username!');
                         return false;
                     }
                 }
@@ -189,11 +194,11 @@ const promptIntern = employeeData => {
                 type: 'input',
                 name: 'name',
                 message: "What is the intern's name?",
-                validate: nameInput => {
-                    if(nameInput) {
+                validate: input => {
+                    if(input) {
                         return true;
                     } else {
-                        console.log('Please enter a name!');
+                        console.log('\nPlease enter a name!');
                         return false;
                     }
                 }
@@ -202,11 +207,12 @@ const promptIntern = employeeData => {
                 type: 'input',
                 name: 'id',
                 message: "What is the intern's ID?",
-                validate: nameInput => {
-                    if(nameInput) {
+                validate: input => {
+                    var regex=/^[0-9]+$/;
+                    if(input.match(regex)) {
                         return true;
                     } else {
-                        console.log('Please enter an ID!');
+                        console.log('\nPlease enter an ID number!');
                         return false;
                     }
                 }
@@ -215,11 +221,12 @@ const promptIntern = employeeData => {
                 type: 'input',
                 name: 'email',
                 message: "What is the intern's email?",
-                validate: nameInput => {
-                    if(nameInput) {
+                validate: input => {
+                    const validEmail = /\S+@\S+\.\S+/;
+                    if(validEmail.test(input)) {
                         return true;
                     } else {
-                        console.log('Please enter an email!');
+                        console.log('\nPlease enter an email!');
                         return false;
                     }
                 }
@@ -228,11 +235,11 @@ const promptIntern = employeeData => {
                 type: 'input',
                 name: 'school',
                 message: "What is the intern's school?",
-                validate: nameInput => {
-                    if(nameInput) {
+                validate: input => {
+                    if(input) {
                         return true;
                     } else {
-                        console.log('Please enter a school!');
+                        console.log('\nPlease enter a school!');
                         return false;
                     }
                 }
