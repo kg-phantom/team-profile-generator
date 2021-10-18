@@ -9,7 +9,7 @@ Generates a webpage that displays a team's information from user input to give q
 
 ![Team Profile Generator Screenshot](assets/images/team-profile-webpage-sc.PNG)
 
-Watch a [Team Profile Generator Demo](https://drive.google.com/file/d/1oDztBwCciecHe2XLfkprNDjcWFQsuSxx/view?usp=sharing).
+Watch a [Team Profile Generator Demo](https://drive.google.com/file/d/1XjmB_SZPRwFqfwd1ZZil-pxzO3VGqvpc/view?usp=sharing).
 
 ## Table of Contents
 * [Installation](#installation)
